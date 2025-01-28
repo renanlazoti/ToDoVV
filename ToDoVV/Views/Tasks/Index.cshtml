@@ -6,18 +6,20 @@
 	ViewData["Title"] = "Tarefas";
 }
 
-<header class="d-flex justify-content-between align-items-center">
-	<h1 class="text-white">Lista de tarefas</h1>
-	<button class="btn btn-warning" id="Create" type="button">Criar Nova Tarefa</button>
+<header>
+	<div class="header-content">
+		<h1 class="text-white">Lista de tarefas</h1>
+		<button class="btn btn-warning" id="Create" type="button">Criar Nova Tarefa</button>
+	</div>
 </header>
-<table class="table table-striped table-dark" id="tarefasTable">
+<table class="table table-striped table-dark">
 	<thead>
 		<tr>
 			<th>Título</th>
 			<th>Descrição</th>
 			<th>Status</th>
 			<th>Data prevista</th>
-			<th></th>
+			<th>Ações</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -29,13 +31,12 @@
 				<td>@task.Status</td>
 				<td>@task.DueDate.ToString("yyyy-MM-dd")</td>
 				<td>
-					<button class="btn btn-outline-warning"
+					<button class="btn btn-outline-warning btn_edit"
 							data-task-id="@task.Id"
 							data-task-title="@task.Title"
 							data-task-description="@task.Description"
 							data-task-status="@task.Status"
-							data-task-dueDate="@task.DueDate.ToString("yyyy-MM-dd")"
-							id="Update">
+							data-task-dueDate="@task.DueDate.ToString("yyyy-MM-dd")">
 						Editar
 					</button>
 					<a asp-action="Delete" asp-route-id="@task.Id" class="btn btn-outline-danger">Excluir</a>
@@ -59,22 +60,18 @@
 					<div class="form-group">
 						<label asp-for="Task!.Title" class="control-label">Título</label>
 						<input asp-for="Task!.Title" class="form-control" placeholder="Passear com o cachorro, estudar..." id="nameField" />
-						<span asp-validation-for="Task!.Title" class="text-danger"></span>
 					</div>
 					<div class="form-group pt-2">
 						<label asp-for="Task!.Description" class="control-label">Descrição</label>
-						<textarea asp-for="Task!.Description" class="form-control" id="descriptionField"></textarea>
-						<span asp-validation-for="Task!.Description" class="text-danger"></span>
+						<textarea asp-for="Task!.Description" class="form-control" placeholder="Levar coleira, pegar água..." id="descriptionField"></textarea>
 					</div>
 					<div class="form-group pt-2">
 						<label asp-for="Task!.Status" class="control-label">Status</label>
 						<input asp-for="Task!.Status" class="form-control" placeholder="Pendente, concluida..." id="statusField" />
-						<span asp-validation-for="Task!.Status" class="text-danger"></span>
 					</div>
 					<div class="form-group pt-2">
 						<label asp-for="Task!.DueDate" class="control-label">Data prevista para conclusão</label>
 						<input asp-for="Task!.DueDate" type="date" class="form-control" value="" id="dateField" />
-						<span asp-validation-for="Task!.DueDate" class="text-danger"></span>
 					</div>
 
 					<div class="btn-group mt-3" role="group" aria-label="Basic example">
@@ -100,23 +97,19 @@
 
 					<div class="form-group">
 						<label asp-for="Task!.Title" class="control-label">Título</label>
-						<input asp-for="Task!.Title" class="form-control" placeholder="Passear com o cachorro, estudar..." id="editNameField" />
-						<span asp-validation-for="Task!.Title" class="text-danger"></span>
+						<input asp-for="Task!.Title" class="form-control" id="editNameField" />
 					</div>
 					<div class="form-group pt-2">
 						<label asp-for="Task!.Description" class="control-label">Descrição</label>
 						<textarea asp-for="Task!.Description" class="form-control" id="editDescriptionField"></textarea>
-						<span asp-validation-for="Task!.Description" class="text-danger"></span>
 					</div>
 					<div class="form-group pt-2">
 						<label asp-for="Task!.Status" class="control-label">Status</label>
-						<input asp-for="Task!.Status" class="form-control" placeholder="Pendente, concluida..." id="editStatusField" />
-						<span asp-validation-for="Task!.Status" class="text-danger"></span>
+						<input asp-for="Task!.Status" class="form-control" id="editStatusField" />
 					</div>
 					<div class="form-group pt-2">
 						<label asp-for="Task!.DueDate" class="control-label">Data prevista para conclusão</label>
 						<input asp-for="Task!.DueDate" type="date" class="form-control" value="" id="editDateField" />
-						<span asp-validation-for="Task!.DueDate" class="text-danger"></span>
 					</div>
 
 					<div class="btn-group mt-3" role="group" aria-label="Basic example">
@@ -140,27 +133,19 @@
 			});
 		});
 
-		$(document).ready(function() {
-			$('#Update').on('click', function() {
+		$('.btn_edit').on('click', function() {
+			const taskId = $(this).data('task-id');
+			const taskTitle = $(this).data('task-title');
+			const taskDescription = $(this).data('task-description');
+			const taskStatus = $(this).data('task-status');
+			const taskDueDate = $(this).data('task-duedate');
 
-				$('#modalUpdateTask').modal('show');
-			});
-		});
-
-		$('.btn-outline-warning').on('click', function() {
-				var taskId = $(this).data('task-id');
-				var taskTitle = $(this).data('task-title');
-				var taskDescription = $(this).data('task-description');
-				var taskStatus = $(this).data('task-status');
-				var taskDueDate = $(this).data('task-duedate');
-
-				$('#editTaskId').val(taskId);
-				$('#editNameField').val(taskTitle);
-				$('#editDescriptionField').val(taskDescription);
-				$('#editStatusField').val(taskStatus);
-				$('#editDateField').val(taskDueDate);
-
-				$('#modalEditTask').modal('show');
+			$('#editTaskId').val(taskId);
+			$('#editNameField').val(taskTitle);
+			$('#editDescriptionField').val(taskDescription);
+			$('#editStatusField').val(taskStatus);
+			$('#editDateField').val(taskDueDate);
+			$('#modalUpdateTask').modal('show');
 		});
 
 		function fieldsValidatorCreate(){
@@ -185,7 +170,6 @@
 				alert("O campo data não pode estar vazio");
 				return false;
 			}
-
 		}
 		
 		function fieldsValidatorUpdate(){
@@ -210,7 +194,6 @@
 				alert("O campo data não pode estar vazio");
 				return false;
 			}
-
 		}
 	</script>
 }
