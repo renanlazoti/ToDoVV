@@ -1,0 +1,217 @@
+﻿@using ToDoVV.Service.Tasks.Response;
+@using ToDoVV.Views.Tasks;
+@model TaskViewModel
+
+@{
+	ViewData["Title"] = "Tarefas";
+}
+
+<header class="d-flex justify-content-between align-items-center">
+	<h1 class="text-white">Lista de tarefas</h1>
+	<button class="btn btn-warning" id="Create" type="button">Criar Nova Tarefa</button>
+</header>
+<table class="table table-striped table-dark" id="tarefasTable">
+	<thead>
+		<tr>
+			<th>Título</th>
+			<th>Descrição</th>
+			<th>Status</th>
+			<th>Data prevista</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var task in Model.Tasks!)
+		{
+			<tr>
+				<td>@task.Title</td>
+				<td>@task.Description</td>
+				<td>@task.Status</td>
+				<td>@task.DueDate.ToString("yyyy-MM-dd")</td>
+				<td>
+					<button class="btn btn-outline-warning"
+							data-task-id="@task.Id"
+							data-task-title="@task.Title"
+							data-task-description="@task.Description"
+							data-task-status="@task.Status"
+							data-task-dueDate="@task.DueDate.ToString("yyyy-MM-dd")"
+							id="Update">
+						Editar
+					</button>
+					<a asp-action="Delete" asp-route-id="@task.Id" class="btn btn-outline-danger">Excluir</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="modal fade" id="modalCreateTask" tabindex="-1" aria-labelledby="modalCreateTaskLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content bg-dark text-white">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalCreateTaskLabel">Criar Nova Tarefa</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+			</div>
+			<div class="modal-body">
+				<form id="createTaskForm" asp-controller="Tasks" asp-action="Create" method="post" onsubmit="return fieldsValidatorCreate()">
+					<input type="hidden" asp-for="Task!.Id" />
+
+					<div class="form-group">
+						<label asp-for="Task!.Title" class="control-label">Título</label>
+						<input asp-for="Task!.Title" class="form-control" placeholder="Passear com o cachorro, estudar..." id="nameField" />
+						<span asp-validation-for="Task!.Title" class="text-danger"></span>
+					</div>
+					<div class="form-group pt-2">
+						<label asp-for="Task!.Description" class="control-label">Descrição</label>
+						<textarea asp-for="Task!.Description" class="form-control" id="descriptionField"></textarea>
+						<span asp-validation-for="Task!.Description" class="text-danger"></span>
+					</div>
+					<div class="form-group pt-2">
+						<label asp-for="Task!.Status" class="control-label">Status</label>
+						<input asp-for="Task!.Status" class="form-control" placeholder="Pendente, concluida..." id="statusField" />
+						<span asp-validation-for="Task!.Status" class="text-danger"></span>
+					</div>
+					<div class="form-group pt-2">
+						<label asp-for="Task!.DueDate" class="control-label">Data prevista para conclusão</label>
+						<input asp-for="Task!.DueDate" type="date" class="form-control" value="" id="dateField" />
+						<span asp-validation-for="Task!.DueDate" class="text-danger"></span>
+					</div>
+
+					<div class="btn-group mt-3" role="group" aria-label="Basic example">
+						<button type="submit" class="btn btn-warning">Criar</button>
+						<a asp-action="Index" class="btn btn-outline-danger">Voltar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modalUpdateTask" tabindex="-1" aria-labelledby="modalUpdateTaskLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content bg-dark text-white">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalUpdateTaskLabel">Atualizar Tarefa</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+			</div>
+			<div class="modal-body">
+				<form id="updateTaskForm" asp-controller="Tasks" asp-action="Update" method="post" onsubmit="return fieldsValidatorUpdate()">
+					<input type="hidden" asp-for="Task!.Id" id="editTaskId"/>
+
+					<div class="form-group">
+						<label asp-for="Task!.Title" class="control-label">Título</label>
+						<input asp-for="Task!.Title" class="form-control" placeholder="Passear com o cachorro, estudar..." id="editNameField" />
+						<span asp-validation-for="Task!.Title" class="text-danger"></span>
+					</div>
+					<div class="form-group pt-2">
+						<label asp-for="Task!.Description" class="control-label">Descrição</label>
+						<textarea asp-for="Task!.Description" class="form-control" id="editDescriptionField"></textarea>
+						<span asp-validation-for="Task!.Description" class="text-danger"></span>
+					</div>
+					<div class="form-group pt-2">
+						<label asp-for="Task!.Status" class="control-label">Status</label>
+						<input asp-for="Task!.Status" class="form-control" placeholder="Pendente, concluida..." id="editStatusField" />
+						<span asp-validation-for="Task!.Status" class="text-danger"></span>
+					</div>
+					<div class="form-group pt-2">
+						<label asp-for="Task!.DueDate" class="control-label">Data prevista para conclusão</label>
+						<input asp-for="Task!.DueDate" type="date" class="form-control" value="" id="editDateField" />
+						<span asp-validation-for="Task!.DueDate" class="text-danger"></span>
+					</div>
+
+					<div class="btn-group mt-3" role="group" aria-label="Basic example">
+						<button type="submit" class="btn btn-warning">Editar</button>
+						<a asp-action="Index" class="btn btn-outline-danger">Voltar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+@section scripts {
+	<script>
+		$(document).ready(function() {
+			$('#Create').on('click', function() {
+
+				$('#modalCreateTask').modal('show');
+			});
+		});
+
+		$(document).ready(function() {
+			$('#Update').on('click', function() {
+
+				$('#modalUpdateTask').modal('show');
+			});
+		});
+
+		$('.btn-outline-warning').on('click', function() {
+				var taskId = $(this).data('task-id');
+				var taskTitle = $(this).data('task-title');
+				var taskDescription = $(this).data('task-description');
+				var taskStatus = $(this).data('task-status');
+				var taskDueDate = $(this).data('task-duedate');
+
+				$('#editTaskId').val(taskId);
+				$('#editNameField').val(taskTitle);
+				$('#editDescriptionField').val(taskDescription);
+				$('#editStatusField').val(taskStatus);
+				$('#editDateField').val(taskDueDate);
+
+				$('#modalEditTask').modal('show');
+		});
+
+		function fieldsValidatorCreate(){
+			const nameField = document.getElementById('nameField').value;
+			const descriptionField = document.getElementById('descriptionField').value;
+			const statusField = document.getElementById('statusField').value;
+			const dateField = document.getElementById('dateField').value;
+
+			if(nameField.trim() === ""){
+				alert("O campo título não pode estar vazio");
+				return false;
+			}
+			if(descriptionField.trim() === ""){
+				alert("O campo descrição não pode estar vazio");
+				return false;
+			}
+			if(statusField.trim() === ""){
+				alert("O campo status não pode estar vazio");
+				return false;
+			}
+			if(dateField.trim() === ""){
+				alert("O campo data não pode estar vazio");
+				return false;
+			}
+
+		}
+		
+		function fieldsValidatorUpdate(){
+			const nameField = document.getElementById('editNameField').value;
+			const descriptionField = document.getElementById('editDescriptionField').value;
+			const statusField = document.getElementById('editStatusField').value;
+			const dateField = document.getElementById('editDateField').value;
+
+			if(nameField.trim() === ""){
+				alert("O campo título não pode estar vazio");
+				return false;
+			}
+			if(descriptionField.trim() === ""){
+				alert("O campo descrição não pode estar vazio");
+				return false;
+			}
+			if(statusField.trim() === ""){
+				alert("O campo status não pode estar vazio");
+				return false;
+			}
+			if(dateField.trim() === ""){
+				alert("O campo data não pode estar vazio");
+				return false;
+			}
+
+		}
+	</script>
+}
+

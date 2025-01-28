@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Tasks\Create.cshtml" />
+    <Content Remove="Views\Tasks\Update.cshtml" />
+  </ItemGroup>
+
 </Project>

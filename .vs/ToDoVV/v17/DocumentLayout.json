@@ -1,12 +1,139 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Renan\\Desktop\\ToDoVV\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|c:\\users\\renan\\desktop\\todovv\\todovv\\views\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|solutionrelative:todovv\\views\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|c:\\users\\renan\\desktop\\todovv\\todovv\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|solutionrelative:todovv\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|c:\\users\\renan\\desktop\\todovv\\todovv\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|solutionrelative:todovv\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|c:\\users\\renan\\desktop\\todovv\\todovv\\views\\tasks\\taskviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|solutionrelative:todovv\\views\\tasks\\taskviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|c:\\users\\renan\\desktop\\todovv\\todovv\\views\\tasks\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|solutionrelative:todovv\\views\\tasks\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|c:\\users\\renan\\desktop\\todovv\\todovv\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|solutionrelative:todovv\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|c:\\users\\renan\\desktop\\todovv\\todovv\\service\\tasks\\requests\\createtaskrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B19CD5BA-3E72-4274-B3DE-296B5DEEACF7}|ToDoVV\\ToDoVV.csproj|solutionrelative:todovv\\service\\tasks\\requests\\createtaskrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ToDoVV\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ToDoVV\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-28T01:19:37.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "ToDoVV\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "ToDoVV\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-28T01:14:12.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Tasks\\TaskViewModel.cs",
+              "RelativeDocumentMoniker": "ToDoVV\\Views\\Tasks\\TaskViewModel.cs",
+              "ToolTip": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Tasks\\TaskViewModel.cs",
+              "RelativeToolTip": "ToDoVV\\Views\\Tasks\\TaskViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T00:55:57.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateTaskRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Service\\Tasks\\Requests\\CreateTaskRequest.cs",
+              "RelativeDocumentMoniker": "ToDoVV\\Service\\Tasks\\Requests\\CreateTaskRequest.cs",
+              "ToolTip": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Service\\Tasks\\Requests\\CreateTaskRequest.cs",
+              "RelativeToolTip": "ToDoVV\\Service\\Tasks\\Requests\\CreateTaskRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T23:13:28.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "ToDoVV\\Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "ToDoVV\\Controllers\\TasksController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwCUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T22:59:25.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Tasks\\Update.cshtml",
+              "RelativeDocumentMoniker": "ToDoVV\\Views\\Tasks\\Update.cshtml",
+              "ToolTip": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Tasks\\Update.cshtml",
+              "RelativeToolTip": "ToDoVV\\Views\\Tasks\\Update.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T22:55:35.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Tasks\\Index.cshtml",
+              "RelativeDocumentMoniker": "ToDoVV\\Views\\Tasks\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Renan\\Desktop\\ToDoVV\\ToDoVV\\Views\\Tasks\\Index.cshtml",
+              "RelativeToolTip": "ToDoVV\\Views\\Tasks\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T22:44:39.178Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
